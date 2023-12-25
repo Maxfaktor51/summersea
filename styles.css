@@ -1,0 +1,284 @@
+html, body {
+    font-family: Julius Sans One;
+
+    height: 100%;
+    margin: 0;
+
+    background-image: url('./assets/background.png');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+    margin: auto;
+}
+
+#page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    flex: 1;
+}
+
+.coin {
+    position: relative;
+    min-width: 100px;
+    min-height: 100px;
+    width: 12vb;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-image: url(./assets/coin_flat_bw.PNG);
+
+    background-size: cover;
+    transition: transform 0.3s;
+}
+
+.coin:hover {
+    background-size: 0%;
+    transform: scale(1.1);
+}
+
+.coin span {
+    position: absolute;
+    top: 0;
+    left: calc(100% / 3 * var(--i));
+    width: calc(100% / 3);
+    height: 100%;
+}
+
+.coin img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.coin img:nth-child(0),
+.coin span:hover + img {
+    opacity: 1;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-column {
+    flex: fit-content;
+    margin: auto 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 666px;
+    max-width: 1000px;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(222, 222, 222, 0.80);
+    padding: 2vb;
+}
+
+.handwritten {
+    font-family: 'Beth Ellen';
+    line-height: 1.5em;
+}
+
+.header-title {
+    margin: auto 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.title-text {
+    font-size: 32px;
+    transition: opacity 0.3s;
+    padding-top: 21px;
+    padding-bottom: 18px;
+}
+
+.icon {
+    opacity: 0;
+    display: none;
+}
+
+.header-title:hover .title-text {
+    opacity: 0;
+    display: none; /* Hide text on hover */
+}
+
+.header-title:hover .icon {
+    opacity: 1;
+    display: inline; /* Display icon on hover */
+}
+
+.hidden-menu {
+    opacity: 0;
+    display: none;
+}
+
+.header-title:hover + .hidden-menu {
+    opacity: 1;
+    display: block;
+}
+
+.material-symbols-outlined {
+    padding: 20px;
+	font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 24;
+	color: rgb(0, 113, 156);
+}
+
+.material-symbols-outlined:hover {
+	font-variation-settings:
+		'FILL' 1,
+		'wght' 400,
+		'GRAD' 0.5,
+		'opsz' 24;
+	color: rgb(0, 31, 43);
+	transform: scale(1.5);
+	transition: transform 0.3s;
+}
+
+.menu {
+    padding: 40px;
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.menu-squished {
+    width: 33%;
+    margin: auto 0px;
+    padding: 5px;
+    display: flex;
+}
+
+.menu-item {
+    width: 100%;
+    height: auto;
+    filter: grayscale(0.5);
+    position: relative;
+    z-index: 0;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.1);
+    filter: sepia(0);
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.portalback {
+    width: 60%;
+    margin: 0% auto;
+    background-image: url(./assets/portal_frame.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    mix-blend-mode: multiply;
+}
+
+.portalfront {
+    width: 100%;
+    mix-blend-mode: darken;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.portalfront:hover {
+    opacity: 1;
+}
+
+.expandingimg {
+    width: 100%;
+    height: 10%;
+}
+
+.expandingimg:hover {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    background: rgba(256, 256, 256, 0.75);
+    color: rgb(0, 113, 156);
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: navy;
+}
+
+nav {
+    background: black;
+    opacity: 0.75;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+article {
+    margin-top: 20px;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.75);
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Shine */
+.flair {
+    width: 100%;
+    height: 30px;
+    border-style: solid;
+    border-color: rgba(0, 31, 43, 0.9);
+    border-width: 2px 0 0 0;
+    border-radius: 12px;
+  }
+  .flair:before {
+    display: block;
+    height: 30px;
+    margin-top: -31px;    
+    border-style: solid;
+    border-color: rgba(0, 31, 43, 0.9);
+    border-width: 0 0 2px 0;
+    border-radius: 12px;
+  }
+  
